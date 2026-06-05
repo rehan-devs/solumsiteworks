@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# Solum Siteworks | Premium Civil & Structural Web Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An immersive, high-performance web platform built for **Solum Siteworks**, a modern design-build studio specializing in elite civil engineering, high-precision site preparation, and structural roofing interfaces. 
 
-Currently, two official plugins are available:
+This interface focuses on fluid motion, structural geometry, and crisp typographic hierarchy to deliver a premium digital presence.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🛠️ Tech Stack & Architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is engineered using a modern front-end workflow focused on speed, type safety, and micro-interactions:
 
-## Expanding the ESLint configuration
+*   **Framework:** React + TypeScript (Vite-powered for rapid HMR)
+*   **Styling:** Tailwind CSS (Modular utility-first architecture)
+*   **Animations:** High-precision layout tracking and fluid scroll interactions
+*   **Linting & Quality:** ESLint with strict type-aware rules for scalable component design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
+## 🚀 Getting Started
+
+Clone the Repository
+
+git clone [https://github.com/rehan-devs/solumsiteworks.git](https://github.com/rehan-devs/solumsiteworks.git)
+cd solumsiteworks
+2. Install Dependencies
+
+npm install
+Run the Development Server
+
+npm run dev
+Build for Production
+
+npm run build
+📐 Design Language & UI Overview
+The layout intentionally diverges from standard construction tropes to project an elite, industrial startup aesthetic:
+
+The Palette: An ultra-dark, premium slate base contrasted against striking structural accents to represent earth, concrete, and steel.
+
+Typography: A bold, geometric sans-serif for heavy structural headers paired with custom editorial serif-italic highlights to emphasize high-end craftsmanship.
+
+Layout: High-contrast grids, responsive navigation states, and stripped-down minimalist sections (Services, Portfolio, Process, Contact) that speak clearly to the user.
+
+⚙️ Development Standards
+ESLint Customization
+For strict production builds, this repository is configured to utilize strict type-checked rules via tseslint:
+
+JavaScript
+// eslint.config.js snippet
 export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
       tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
       tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
     ],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
     },
   },
 ])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
