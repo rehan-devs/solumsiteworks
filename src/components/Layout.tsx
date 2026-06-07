@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { HardHat, Menu, X, Phone, MapPin, Mail, ArrowRight } from 'lucide-react';
+import { HardHat, Menu, X, MapPin, Mail, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -32,7 +32,6 @@ export default function Layout() {
       {/* Top Bar */}
       <div className="bg-[#222222] text-[#e5e0d8] py-2 px-4 text-xs md:text-sm font-medium hidden md:flex justify-between items-center z-50 relative">
         <div className="flex items-center space-x-6 max-w-7xl mx-auto w-full">
-          <span className="flex items-center"><Phone className="w-4 h-4 mr-2" /> (800) 555-0199</span>
           <span className="flex items-center"><Mail className="w-4 h-4 mr-2" /> bids@solumsitework.com</span>
           <span className="flex items-center ml-auto"><MapPin className="w-4 h-4 mr-2" /> Nationwide Commercial Services</span>
         </div>
@@ -54,8 +53,8 @@ export default function Layout() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
+              <Link
+                key={link.name}
                 to={link.path}
                 className={`text-sm font-semibold uppercase tracking-wide transition-colors ${
                   location.pathname === link.path ? 'text-[#3b2f28] border-b-2 border-[#3b2f28]' : 'text-gray-500 hover:text-[#111111]'
@@ -70,7 +69,7 @@ export default function Layout() {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="md:hidden text-[#111111] p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -82,7 +81,7 @@ export default function Layout() {
       {/* Mobile Nav */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -135,7 +134,7 @@ export default function Layout() {
               {/* Social icons could go here */}
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Services</h3>
             <ul className="space-y-3 text-sm">
@@ -166,17 +165,13 @@ export default function Layout() {
                 <span>Headquarters: <br/>1000 Industrial Pkwy, <br/>Dallas, TX 75201</span>
               </li>
               <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-3 text-[#475569] shrink-0" />
-                <span>(800) 555-0199</span>
-              </li>
-              <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-[#475569] shrink-0" />
                 <span>bids@solumsitework.com</span>
               </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
           <p>&copy; 2026 Solum Site Work. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
